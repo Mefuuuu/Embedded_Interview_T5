@@ -10,6 +10,6 @@ Quá trình này được diễn ra như sau:
 
  + Quá trình này bao gồm những việc: 
 
-  . Gán define, thay thế giá trị các chỗ gọi marco
+  * Gán define, thay thế giá trị các chỗ gọi marco
   
   . Lấy dữ liệu trong các thư mục thư viện 
