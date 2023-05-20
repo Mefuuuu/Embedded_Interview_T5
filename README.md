@@ -72,7 +72,7 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
   
 Để cấp phát bộ nhớ động ta có, 
 
-  . VD: uint8_t *arr = (uint8_t*) malloc(sizeof(uint8_t)*5); Như vậy ta có một mảng có kích thước 5 byte.
+  . VD: ```uint8_t *arr = (uint8_t*) malloc(sizeof(uint8_t)*5);``` Như vậy ta có một mảng có kích thước 5 byte.
 
 Chúng ta có thể thay đổi kích thước mảng bằng cách sử dụng hàm `calloc` như sau, 
 
