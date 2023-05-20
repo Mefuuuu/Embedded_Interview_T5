@@ -70,7 +70,7 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
   
 ------***HINT***------
   
-Để cấp phát bộ nhớ động ta có ví dụ: uint8_t *ptr = (uint8_t*) malloc(sizeof(uint_8)*5); như vậy
+Để cấp phát bộ nhớ động ta có ví dụ: _uint8_t *arr = (uint8_t*) malloc(sizeof(uint8_t)*5;_ Như vậy ta có một mảng có giá trị 5 byte.
 
 
 
