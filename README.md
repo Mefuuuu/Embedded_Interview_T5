@@ -33,6 +33,14 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
    ![Unt1321itled](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/85489a2f-d642-4688-a16e-37229df6ba81)
 - Text:
 
- . Quyền truy cập chỉ Read và nó chưa lệnh để thực thi nên tránh sửa đổi instruction.
+  . Quyền truy cập chỉ Read và nó chưa lệnh để thực thi nên tránh sửa đổi instruction.
 
- . Chứa khai báo hằng số trong chương trình (.rodata). VD: const int a = 100;
+  . Chứa khai báo hằng số trong chương trình (.rodata). VD: const int a = 100;
+
+- Data:
+
+  . Quyền truy cập là read-write.
+  
+  . Chứa biến toàn cục or biến static với giá trị khởi tạo khác không.
+  
+  . Được giải phóng khi kết thúc chương trình.
