@@ -35,13 +35,13 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
 
   . Quyền truy cập chỉ Read và nó chưa lệnh để thực thi nên tránh sửa đổi instruction.
 
-  . Chứa khai báo hằng số trong chương trình (.rodata). VD: const int a = 100;
+  . Chứa khai báo hằng số trong chương trình (.rodata). VD: ```const int a = 100;```
 
 - Data:
 
   . Quyền truy cập là read-write.
   
-  . Chứa biến toàn cục or biến static với giá trị khởi tạo khác không. VD: static int b = 100;
+  . Chứa biến toàn cục or biến static với giá trị khởi tạo khác không. VD: ```static int b = 100;```
   
   . Được giải phóng khi kết thúc chương trình.
 
