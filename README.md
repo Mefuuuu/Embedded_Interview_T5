@@ -4,4 +4,11 @@ Compiler hay còn gọi là trình biên dịch giúp chuyển đổi ngôn ng�
 
 `GCC Compiler` là một trong những Compiler miễn phí có thể dùng khi học
 
-Trước tiên chúng ta có Source code với file có đuôi `.c`, `.h`, `.cpp`
+Quá trình này được diễn ra như sau:
+
+- Trước tiên chúng ta có Source code với file có đuôi `.c`, `.h`, `.cpp` qua giai đoạn `Preprocessor` hay còn được gọi là quá trình tiền xử lý sang dạg file `.i` được gọi là `Preprocessed source`.
+
+ + Quá trình này bao gồm những việc: 
+
+  . Gán define, thay thế giá trị các chỗ gọi marco
+  . Lấy dữ liệu trong các thư mục thư viện 
