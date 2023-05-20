@@ -68,9 +68,9 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
   
   . Sẽ được giải phóng khi gọi hàm free, ...
   
-------***HINT***-------
+------***HINT***------
   
-Để cấp phát bộ nhớ động
+Để cấp phát bộ nhớ động ta có ví dụ: uint8_t *ptr = (uint8_t*) malloc(sizeof(uint_8)*5); như vậy
 
 
 
