@@ -10,9 +10,9 @@ Quá trình này được diễn ra như sau:
 
  + Quá trình này bao gồm những việc: 
 
-  . Gán define, thay thế giá trị các chỗ gọi marco
+   . Gán define, thay thế giá trị các chỗ gọi marco
   
-  . Lấy dữ liệu trong các thư mục thư viện
+   . Lấy dữ liệu trong các thư mục thư viện
   
 _Các ngôn ngữ lập trình bậc cao như python được thiết kế để giúp lập trình viên viết mã nguồn dễ hiểu và dễ bảo trì hơn. Nhưng máy tính chỉ có thể hiểu được mã máy. Mà ngôn ngữ C gần với ngôn ngữ máy, nên chúng ta không sử dụng ngôn ngữ lập trình bậc cao_
 
