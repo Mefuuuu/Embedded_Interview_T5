@@ -41,6 +41,68 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
 
   . Quyền truy cập là read-write.
   
-  . Chứa biến toàn cục or biến static với giá trị khởi tạo khác không.
+  . Chứa biến toàn cục or biến static với giá trị khởi tạo khác không. VD: static int b = 100;
   
   . Được giải phóng khi kết thúc chương trình.
+
+- BSS:
+
+  . Quyền truy cập là read-write.
+  
+  . Chứa biến toàn cục or biến static với giá trị khởi tạo bằng không or không khởi tạo.
+  
+  . Được giải phóng khi kết thúc chương trình.
+  
+- Stack:
+  . Quyền truy cập là read-write.
+  
+  . Được sử dụng cấp phát cho biến local, input parameter của hàm,…
+
+  . Sẽ được giải phóng khi ra khỏi block code/hàm
+  
+- Heap:
+
+  . Quyền truy cập là read-write.
+  
+  . Được sử dụng để cấp phát bộ nhớ động như: Malloc, Calloc, ...
+  
+  . Sẽ được giải phóng khi gọi hàm free, ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
