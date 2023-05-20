@@ -27,4 +27,5 @@ _Các ngôn ngữ lập trình bậc cao như python được thiết kế để
 Vùng nhớ `RAM` là nơi dữ liệu khởi tạo
 
 Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ưu bộ nhớ
+
 ![Unt1321itled](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/85489a2f-d642-4688-a16e-37229df6ba81)
