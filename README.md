@@ -24,5 +24,6 @@ _Các ngôn ngữ lập trình bậc cao như python được thiết kế để
 
 ![maxresdefault](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/0f8ca122-dbff-4767-a02c-b0d2bfc138b4)
 # Bài 2 Memory Layout
-Vùng nhớ `RAM` là nơi lưu dữ liệu
+Vùng nhớ `RAM` là nơi dữ liệu khởi tạo
+
 Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ưu bộ nhớ
