@@ -72,11 +72,11 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
   
 Để cấp phát bộ nhớ động ta có, 
 
-  . VD: ```uint8_t* arr = (uint8_t*) malloc(sizeof(uint8_t)*5);``` Như vậy ta có một mảng có kích thước 5 byte.
+  . VD: ```c uint8_t* arr = (uint8_t*) malloc(sizeof(uint8_t)*5);``` Như vậy ta có một mảng có kích thước 5 byte.
 
 Chúng ta có thể thay đổi kích thước mảng bằng cách sử dụng hàm `calloc` như sau, 
 
-  . VD: ``` uint8_t* arr = (uint8_t*)calloc(3, sizeof(uint8_t));``` Như vậy ta có một mảng có kích thước là 3 byte.
+  . VD: ```c uint8_t* arr = (uint8_t*)calloc(3, sizeof(uint8_t));``` Như vậy ta có một mảng có kích thước là 3 byte.
 
 Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá trị = 0 một cách tự động cho các phần tử trong mảng mà người dùng khởi tạo. Hơn nữa còn khác biệt về mặt tốc độ. Tuy nhiên trong quá trình làm việc sẽ sử dụng hàm `malloc` nhiều hơn
 # Bài 3 Macro Inline Function
@@ -86,11 +86,11 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   
   . VD: 
   ```c
-  `#define MAX 10` 
+  #define MAX 10 
   
   Khi gặp bất kỳ lời gọi MAX nào thì thay ngay bằng 10
   
-  `#define SUM(a,b) a + b`
+  #define SUM(a,b) a + b
   
   Khi gặp bất kỳ lời gọi SUM(L,R) nào thì thay ngay bằng (L+R)
   ```
