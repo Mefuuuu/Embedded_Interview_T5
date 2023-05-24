@@ -80,7 +80,7 @@ Chúng ta có thể thay đổi kích thước mảng bằng cách sử dụng h
 
 Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá trị = 0 một cách tự động cho các phần tử trong mảng mà người dùng khởi tạo. Hơn nữa còn khác biệt về mặt tốc độ. Tuy nhiên trong quá trình làm việc sẽ sử dụng hàm `malloc` nhiều hơn
 # Bài 3 Macro Inline Function
-- *Marco*: Xử lý bởi preprocessor
+- ***Marco***: Xử lý bởi preprocessor
 
   . Được diễn ra ở quá trình tiền xử lý. Macro thay thế đoạn code được khai báo macro vào bất cứ chỗ nào xuất hiện macro đó.
   
@@ -108,17 +108,17 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
    */
    // Kết quả in ra được sẽ là: this is test
    ```
-- *Function*: 
+- ***Function***: 
 
   . Khi thấy hàm được gọi, compiler sẽ phải lưu con trỏ chương trình PC hiện tại vào stack; chuyển PC tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về; sau đó quay lại vị trí ban đầu trong stack trước khi gọi hàm và tiếp tục thực hiện chương trình.
   
   . Như có thể thấy, các này khiến chương trình tốn thời gian hơn là chỉ cần thay thế đoạn code đã được compile (cách của inline function)
   
-- *Inline*: Xử lý bởi compiler
+- ***Inline***: Xử lý bởi compiler
 
   . Khi compiler thấy bất kỳ chỗ nào xuất hiện inline function, nó sẽ thay thế chỗ đó bởi định nghĩa của hàm đã được compile tương ứng. –> Phần được thay thế không phải code mà là đoạn code đã được compiler
   
-- *So sánh*
+- ***So sánh***
 
   . Macro đơn giản là chỉ thay thế đoạn code macro vào chỗ được gọi trước khi được biên dịch
   
@@ -126,11 +126,11 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   
   . Hàm bình thường phải tạo một function call, lưu địa chỉ trước khi gọi hàm vào stack sau đó mới thực hiện hàm và sau cùng là quay trở về địa chỉ trên stack trước khi gọi hàm và thực hiện tiếp chương trình
   
-  . Macro khiến code trở nên dài hơn rất nhiều so với bình thường nhưng thời gian chạy nhanh.
+  . `Macro` khiến code trở nên dài hơn rất nhiều so với bình thường nhưng `thời gian chạy nhanh`.
   
-  . Hàm inline cũng khiến code dài hơn, tuy nhiên nó làm giảm thời gian chạy chương trình.
+  . Hàm `inline` cũng khiến code dài hơn, tuy nhiên nó làm `giảm thời gian` chạy chương trình.
   
-  . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline function nhưng code ngắn gọn hơn.
+  . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline `function` nhưng `code ngắn gọn hơn`.
    
    
    
