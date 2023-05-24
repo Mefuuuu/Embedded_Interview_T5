@@ -108,7 +108,7 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
    */
    // Kết quả in ra được sẽ là: this is test
    ```
-- ***Function***: 
+- ***Function***: Xử lý bởi compiler
 
   . Khi thấy hàm được gọi, compiler sẽ phải lưu con trỏ chương trình PC hiện tại vào stack; chuyển PC tới hàm được gọi, thực hiện hàm đó xong và lấy kết quả trả về; sau đó quay lại vị trí ban đầu trong stack trước khi gọi hàm và tiếp tục thực hiện chương trình.
   
@@ -131,7 +131,7 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   . Hàm `inline` cũng khiến code dài hơn, tuy nhiên nó làm `giảm thời gian` chạy chương trình.
   
   . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline `function` nhưng `code ngắn gọn hơn`.
-   
+# Thao tác bit
    
    
  
