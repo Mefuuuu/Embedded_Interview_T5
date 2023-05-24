@@ -83,9 +83,10 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
 - *Marco*
 
   . Được diễn ra ở quá trình tiền xử lý. Macro thay thế đoạn code được khai báo macro vào bất cứ chỗ nào xuất hiện macro đó.
+  
   . VD: 
   
-    #define MAX 10
+  #define MAX 10
 
 
 
