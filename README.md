@@ -94,7 +94,20 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   
   Khi gặp bất kỳ lời gọi SUM(L,R) nào thì thay ngay bằng (L+R)
   ```
-
+  . VD:
+  ```c
+  #define CREATE_FUNC(ten_ham, noi_dung)    \
+  void ten_ham(){                           \
+    printf("%s\n",noi_dung);               \
+  }
+  CREATE_FUNC(test,"this is test\n"); 
+   /*
+  void test(){                           
+    printf("%s\n","this is test\n");       
+  }
+   */
+   // Kết quả in ra được sẽ là: this is test
+ ```
 
 
 
