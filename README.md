@@ -79,7 +79,7 @@ Chúng ta có thể thay đổi kích thước mảng bằng cách sử dụng h
   . VD: ``` uint8_t* arr = (uint8_t*)calloc(3, sizeof(uint8_t));``` Như vậy ta có một mảng có kích thước là 3 byte.
 
 Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá trị = 0 một cách tự động cho các phần tử trong mảng mà người dùng khởi tạo. Hơn nữa còn khác biệt về mặt tốc độ. Tuy nhiên trong quá trình làm việc sẽ sử dụng hàm `malloc` nhiều hơn
-# Bài 3 Macro And Function
+# Bài 3 Macro Inline Function
 
 
 
