@@ -85,7 +85,7 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   . Được diễn ra ở quá trình tiền xử lý. Macro thay thế đoạn code được khai báo macro vào bất cứ chỗ nào xuất hiện macro đó.
   
   . VD: 
-  
+  ```c
   `#define MAX 10` 
   
   Khi gặp bất kỳ lời gọi MAX nào thì thay ngay bằng 10
@@ -93,6 +93,7 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   `#define SUM(a,b) a + b`
   
   Khi gặp bất kỳ lời gọi SUM(L,R) nào thì thay ngay bằng (L+R)
+  ```
 
 
 
