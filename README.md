@@ -86,7 +86,13 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   
   . VD: 
   
-  #define MAX 10
+  `#define MAX 10` 
+  
+  Khi gặp bất kỳ lời gọi MAX nào thì thay ngay bằng 10
+  
+  `#define SUM(a,b) a + b`
+  
+  Khi gặp bất kỳ lời gọi SUM(L,R) nào thì thay ngay bằng (L+R)
 
 
 
