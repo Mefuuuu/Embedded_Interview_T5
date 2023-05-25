@@ -132,6 +132,12 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   
   . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline `function` nhưng `code ngắn gọn hơn`.
 # Thao tác bit
+ - Biểu thức AND: Ký hiệu &
+|A|B|A&B|
+|0|0|0  |
+|0|1|0  |
+|1|0|0  |
+|1|1|1  |
    
    
  
