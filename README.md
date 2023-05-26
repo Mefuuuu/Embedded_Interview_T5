@@ -276,7 +276,7 @@ void dem(){
 - ***Khái niệm***
   . Bộ nhớ RAM chứa rất nhiều ô nhớ, mỗi ô nhớ có kích thước 1 byte.
   . Mỗi ô nhớ có địa chỉ duy nhất và địa chỉ này được đánh số từ 0 trở đi. Nếu CPU 32 bit thì có 2^32 địa chỉ có thể đánh cho các ô nhớ trong RAM.
-![example](bieudien_contro.png)
+![bieudien_contro](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/48c4f945-0384-40ab-8c52-5b1db3610eaf)
 ***1. Con trỏ NULL:*** Con trỏ NULL là con trỏ lưu địa chỉ 0x00000000. Tức địa chỉ bộ nhớ 0, có ý nghĩa đặc biệt, cho biết con trỏ không trỏ vào đâu cả.
 `int *p3 = NULL; //con trỏ null không trỏ đến vùng nhớ nào`
 ***2. Con trỏ hàm:*** Dùng để lưu trữ và gọi các hàm thông qua con trỏ
