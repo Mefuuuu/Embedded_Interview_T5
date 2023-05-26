@@ -280,6 +280,7 @@ void dem(){
 
 ***1. Con trỏ NULL:*** Con trỏ NULL là con trỏ lưu địa chỉ 0x00000000. Tức địa chỉ bộ nhớ 0, có ý nghĩa đặc biệt, cho biết con trỏ không trỏ vào đâu cả.
 `int *p3 = NULL; //con trỏ null không trỏ đến vùng nhớ nào`
+
 ***2. Con trỏ hàm:*** Dùng để lưu trữ và gọi các hàm thông qua con trỏ
 ```c
 int phepCong(int a, int b) {
