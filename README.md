@@ -255,6 +255,7 @@ void dem(){
 }
 ```
 - ***Static***
+- 
   . **Static cục bộ**
     Biến được khởi tạo 1 lần và tồn tại suốt vòng đời chương trình và giá trị không bị mất đi ngay cả khi kết thúc hàm.
   VD:
@@ -268,7 +269,7 @@ void dem(){
   test();
   Kết quả: 10 11 12
   ```
-  . **Static toàn cục ***
+  . ***Static toàn cục ***
   Giống như biến toàn cục nhưng sẽ chỉ có thể được truy cập và sử dụng trong File khai báo nó, các File khác không thể truy cập được kể cả dùng từ khóa extern
   VD:
   ```c
