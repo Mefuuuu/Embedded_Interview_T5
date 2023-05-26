@@ -130,46 +130,210 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   
   . Hàm `inline` cũng khiến code dài hơn, tuy nhiên nó làm `giảm thời gian` chạy chương trình.
   
-  . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline `function` nhưng `code ngắn gọn hơn`.
-# Thao tác bit
-
-   
+  . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline `function` nhưng `*code* ngắn gọn hơn`.
+# Bài 4 Thao tác bit
+ - Biểu thức AND: Ký hiệu `&`
+![example](Untitledand.png)
+```c
+unsigned int a = 5;  // 0101
+unsigned int b = 3;  // 0011
+unsigned int result = a & b;  // 0001
+```
+- Biểu thức NOT: Ký hiệu `~`
+![example](Untitlenotd.png)
+```c
+unsigned int a = 5;  // 0101
+unsigned int result = ~a;  // 1010 (đảo ngược các bit)
+```
+ - Biểu thức OR: Ký hiệu `|`
+![example](UntitleORd.png)
+```c
+unsigned int a = 5;  // 0101
+unsigned int b = 3;  // 0011
+unsigned int result = a | b;  // 0111
+```
+ - Biểu thức XOR: Ký hiệu `^`
+![example](UntiXXXXortled.png)
+```c
+unsigned int a = 5;  // 0101
+unsigned int b = 3;  // 0011
+unsigned int result = a ^ b;  // 0110
+```
  
+ - Dịch trái: Ký hiệu `<<`
+```c
+unsigned int a = 5;  // 0101
+unsigned int result = a << 2;  // 010100 (dịch trái 2 vị trí)   
+```
+ - Dịch phải: Ký hiệu `>>`
+```c
+unsigned int a = 5;  // 0101
+unsigned int result = a >> 2;  // 0001 (dịch phải 2 vị trí) 
+```
+# Bài 5 STRUCT - UNION
+- ***Struct***
+  . In ra size: ```printf("Size: %lu", sizeof(struct typeDate));```
+  . Cách tính số size. VD:
+```c
+struct typeDate
+{
+    uint8_t arr1[4]; // 1 byte
+    uint16_t arr2[2]; // 2 byte
+    uint64_t arr3[5]; // 8 byte
+    uint32_t arr4[4]; // 4 byte
+};
+```
+Số byte cần quét trong 1 lần = 8 byte(vì uint64_t là lớn nhất)
 
+uint8_t có size 1 byte => arr1[4] cần 1*4 = 4 byte để lưu, mà 1 lần quét là 8 byte
 
+=> arr1[4] = 4byte + 4byte bộ nhớ đệm
 
+uint16_t có size 2 byte => arr2[2] cần 2*2 = 4 byte để lưu, mà ở trên còn dư 4 byte, nên lúc này ta chèn vào byte bộ nhớ đệm ở trên
 
+=> arr2[2] = 4 byte (byte của arr2 vào bộ nhớ đệm trên arr1) + 4 byte (byte của arr1) => dùng 1 lần quét
 
+int64_t có size 8 byte => arr3[5] cần 8*5 = 40 byte để lưu => dùng 5 lần quét
 
+uint32_t có size 4 byte => arr4[4] cần 4*4 = 16  byte để lưu
 
+=> arr4[4] = 2*4 + 2*4 = 16 byte => dùng 2 lần quét
 
+=> Tổng size = 4 byte + 4 byte + 40 byte + 16 byte = 64 byte (= 8 lần quét 8 byte)
 
+- ***UNION***
+```c
+typedef union
+{
+   //size union = size thành viên lớn nhất
+   uint8_t test1[3]; // 3 byte
+   uint8_t test2[2]; // 2 byte
+}data_union;
+```
+- ***So sánh Struct - Union***
+Về mặt ý nghĩa, struct và union cơ bản giống nhau. Tuy nhiên, về mặt lưu trữ trong bộ nhớ, chúng có sự khác biệt rõ rệt như sau:
 
+  .Struct: Dữ liệu của các thành viên của struct được lưu trữ ở những vùng nhớ khác nhau. Do đó kích thước của 1 struct tối thiểu bằng kích thước các thành viên cộng lại tại vì còn phụ thuộc vào bộ nhớ đệm (struct padding).
+  . Union : Dữ liệu các thành viên sẽ dùng chung 1 vùng nhớ. Kích thước của union được tính là kích thước lớn nhất của kiểu dữ liệu trong union. Việc thay đổi nội dung của 1 thành viên sẽ dẫn đến thay đổi nội dung của các thành viên khác.
+# Bài 6 EXTERN - STATIC
+- ***Extern***
+  . Biến extern được sử dụng khi một file cụ thể cần truy cập `một biến từ file khác`.
+```c
+// file main.c
+#include <stdio.h>
+extern int count; // sử dụng biến count ở file test
+extern void dem(); //sử dụng hàm ở file test
+int main ()
+{
+   printf("count: %d\n",count);
+   dem();
+   dem();
+   return 0; 
+  /* Dùng lệnh: gcc main.c test.c -o main
+              ./main
+   Kết quả:   16 
+              16
+              17 
+   */
+}
+```
+```c
+// flie test.c  
+int count = 16;
 
+void dem(){
+    printf("count = %d\n",count);
+    count++;
+}
+```
+- ***Static***
+  . **Static cục bộ**
+    Biến được khởi tạo 1 lần và tồn tại suốt vòng đời chương trình và giá trị không bị mất đi ngay cả khi kết thúc hàm.
+  VD:
+  ```c
+  void test(){
+    static int a = 10;
+    printf("%d\n", a++);
+  }
+  test();
+  test();
+  test();
+  Kết quả: 10 11 12
+  ```
+  . **Static toàn cục ***
+  Giống như biến toàn cục nhưng sẽ chỉ có thể được truy cập và sử dụng trong File khai báo nó, các File khác không thể truy cập được kể cả dùng từ khóa extern
+  VD:
+  ```c
+  static int a = 10;
+  void test(){
+    printf("%d\n", a++);
+  }
+  test();
+  test();
+  test();
+  Kết quả: 10 11 12
+# Bài 7 POINTER
+- ***Khái niệm***
+  . Bộ nhớ RAM chứa rất nhiều ô nhớ, mỗi ô nhớ có kích thước 1 byte.
+  . Mỗi ô nhớ có địa chỉ duy nhất và địa chỉ này được đánh số từ 0 trở đi. Nếu CPU 32 bit thì có 2^32 địa chỉ có thể đánh cho các ô nhớ trong RAM.
+![example](bieudien_contro.png)
+***1. Con trỏ NULL:*** Con trỏ NULL là con trỏ lưu địa chỉ 0x00000000. Tức địa chỉ bộ nhớ 0, có ý nghĩa đặc biệt, cho biết con trỏ không trỏ vào đâu cả.
+`int *p3 = NULL; //con trỏ null không trỏ đến vùng nhớ nào`
+***2. Con trỏ hàm:*** Dùng để lưu trữ và gọi các hàm thông qua con trỏ
+```c
+int phepCong(int a, int b) {
+ 	return a + b;
+ }
+ int phepTru(int a, int b) {
+ 	return a - b;
+ }
 
+ int main() {
+ 
+ 	int (*ptr)(int, int) = phepCong;
+ 	int result = ptr(5, 3);
+ 	printf("Result: %d\n", result);
 
+ 	ptr = phepTru;
+ 	result = ptr(5, 3);
+ 	printf("Result: %d\n", result);
 
+ 	return 0;
+ }
+ ```
+ ***3. Con trỏ void:*** Con trỏ void có thể trỏ tới bất kỳ kiểu dữ liệu nào, nhưng khi xuất ra giá trị thì phải ép kiểu.
+ ```c
+int num = 10;
+ float f = 3.14;
+ void *ptr;
+ ptr = &num;
+ printf("num = %d\n",(int*)ptr);
+ ptr = &f;
+ printf("f = %f\n",(float*)ptr);
+ ```
+***4. Con trỏ hàm:*** Lưu trữ địa chỉ của một hàm cụ thể để gọi hàm thông qua con trỏ.
+```c
+ int cong(int a, int b) {
+ 	return a + b;
+ }
+ int tru(int a, int b) {
+ 	return a - b;
+ }
 
+ void pheptinh(int a, int b, int (*ptr)(int, int)) {
+ 	int result = ptr(a, b);
+ 	printf("Result: %d\n", result);
+ }
 
+ int main() {
+ 	int a = 4, b = 2;
 
+ 	pheptinh(a, b, cong);
+ 	pheptinh(a, b, tru);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 	return 0;
+ }
+ ```
+ ***5. Pointer to pointer:*** Con trỏ này dùng để lưu địa chỉ của con trỏ khác
+ ```c
+ ```
