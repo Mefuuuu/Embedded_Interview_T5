@@ -133,27 +133,31 @@ Sự khác biệt giữa `calloc` và `malloc` là hàm calloc sẽ gán giá tr
   . Hàm bình thường sẽ phải gọi function call nên tốn thời gian hơn inline `function` nhưng `*code* ngắn gọn hơn`.
 # Bài 4 Thao tác bit
  - Biểu thức AND: Ký hiệu `&`
-![example](Untitledand.png)
+ - ![Untitledand](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/c1b43504-0e2e-4d14-bf97-0df205d2a67d)
+
 ```c
 unsigned int a = 5;  // 0101
 unsigned int b = 3;  // 0011
 unsigned int result = a & b;  // 0001
 ```
 - Biểu thức NOT: Ký hiệu `~`
-![example](Untitlenotd.png)
+![Untitlenotd](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/f9aacd8d-e7c8-45c0-abc1-8b5d089133bb)
+
 ```c
 unsigned int a = 5;  // 0101
 unsigned int result = ~a;  // 1010 (đảo ngược các bit)
 ```
  - Biểu thức OR: Ký hiệu `|`
-![example](UntitleORd.png)
+ ![UntitleORd](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/ef081814-cde0-47d7-ab48-e7b2989b0fd0)
+
 ```c
 unsigned int a = 5;  // 0101
 unsigned int b = 3;  // 0011
 unsigned int result = a | b;  // 0111
 ```
  - Biểu thức XOR: Ký hiệu `^`
-![example](UntiXXXXortled.png)
+ ![UntiXXXXortled](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/3b2d8ea8-fd1b-4637-a0e4-33c9f6bc4b00)
+
 ```c
 unsigned int a = 5;  // 0101
 unsigned int b = 3;  // 0011
