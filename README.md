@@ -269,7 +269,7 @@ void dem(){
   test();
   Kết quả: 10 11 12
   ```
-  . ***Static toàn cục ***
+  . **Static toàn cục **
   Giống như biến toàn cục nhưng sẽ chỉ có thể được truy cập và sử dụng trong File khai báo nó, các File khác không thể truy cập được kể cả dùng từ khóa extern
   VD:
   ```c
