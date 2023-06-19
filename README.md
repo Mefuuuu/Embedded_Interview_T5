@@ -347,5 +347,17 @@ int num = 10;
  }
  ```
  ***5. Pointer to pointer:*** Con trỏ này dùng để lưu địa chỉ của con trỏ khác
+ 
+`int* ptr = 10;` bản chất của nó cũng là biến nên cũng sẽ có địa chỉ và giá trị
+
+`int **ptp = 0xc1;` pointer to pointer là con trỏ lưu địa chỉ của con trỏ
  ```c
+ int n = 10;
+ int *ptr = &n;     // Con trỏ ptr trỏ đến biến n và giá trị của ptr chính là địa chỉ của biến n
+ int **ptp = &ptr;	 // Con trỏ ptp trỏ đến con trỏ ptr và lưu địa chỉ của con trỏ ptr vào ptp
+
+ printf("Giá trị của n: %d\n", *ptr); //Giá trị của n: 10
+ printf("Địa chỉ của n: %p\n", ptr); //Địa chỉ của n: 0x7ffee2a697a8 
+ printf("Giá trị của n: %d\n", **ptp); //Giá trị của n: 10
+ printf("Địa chỉ của ptp: %p\n", ptp); //Địa chỉ của ptr: 0x7ffee2a697a0
  ```
