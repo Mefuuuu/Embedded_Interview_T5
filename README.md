@@ -398,3 +398,34 @@ int main(){
  . `Private`: Được sử dụng khi bạn muốn chặn User truy cập vào những member khai báo trong phạm vi này, giới hạn truy cập và sửa đổi giá trị của chúng. Sử dụng các member trong Public để truy cập đến các member trong Private.
  
  . `Protected`: Tương tự như Private, nhưng Private thì các class con không thể kết thừa được các member trong Private của class chính, còn Protected thì lại cho phép các class con có thể kế thừa được các member trong protected của class chính.
+ 
+- Constructor
+
+ . Hàm khởi tạo là hàm có tên trùng với tên class, code đầu tiên, nằm ở phạm vi truy cập public, có thể có input parameters hoặc không.
+```c
+class SinhVien{
+	public: 
+		SinhVien(int tuoi, int lop); // có tên hàm trùng với tên của class gọi là contructor
+		void hienThi(); //method	
+	private: 
+		int tuoi; //property
+		int lop; //property
+};
+
+void SinhVien::hienThi(){
+	cout<<"Tuoi: "<<tuoi<<endl;  
+	cout<<"Lop "<<lop<<endl;
+} //method
+
+SinhVien::SinhVien(int tuoi,int lop){
+	SinhVien::tuoi = tuoi; //class SinhVien có thể truy cập đến tất cả nhưng member nằm trong nó
+	SinhVien::lop = lop;
+}
+
+int main(){
+	// khi có contructor thì nó luôn luôn chạy đầu tiên khi object được khởi tạo.
+	SinhVien sv(20,13); //có thể gán giá trị trực tiếp vào khai báo ở public
+	sv.hienThi();
+	return 0;
+}
+```
