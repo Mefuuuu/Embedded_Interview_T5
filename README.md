@@ -429,3 +429,9 @@ int main(){
 	return 0;
 }
 ```
+- Biến static trong class
+
+  . Khai báo trước trong form sau đó khởi tạo bên ngoài
+
+ . Biến static trong class có chung một địa chỉ khởi tạo và tồn tại hết vòng đời chương trình.
+
