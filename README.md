@@ -361,3 +361,31 @@ int num = 10;
  printf("Giá trị của n: %d\n", **ptp); //Giá trị của n: 10
  printf("Địa chỉ của ptp: %p\n", ptp); //Địa chỉ của ptr: 0x7ffee2a697a0
  ```
+# Bài 9 Class
+Class là một cấu trúc dữ liệu tự định nghĩa, nó cho phép lập trình viên tạo ra các đối tượng (objects) mới có cùng bản chất.
+
+Các biến được khai báo trong class được gọi là các property và các hàm được khai báo trong class được gọi là các method
+```c
+class SinhVien{
+    public:
+        int tuoi; //property
+        int lop;  //property
+        void hienThi();//method
+};
+
+void SinhVien::hienThi(){
+    cout<<"Tuoi: "<<tuoi<<endl; 
+    cout<<"Lop:  "<<lop<<endl;
+}; //method
+
+int main(){
+
+    SinhVien sv; //object
+
+    sv.tuoi = 10;
+    sv.lop = 3;
+
+    sv.hienThi();
+
+    return 0;
+```
