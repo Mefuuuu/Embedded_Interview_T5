@@ -449,7 +449,19 @@ int main(){
 	sv1.tuoi = 10;
 	sv2.tuoi = 30;
 	printf("%d\n", sv1.tuoi);    // in ra = 30
+	////về địa chỉ của hai object thì giống với struct. sv1 và sv2 sẽ được cấp vùng nhớ khác  với kích thước là tổng kích thước của các member và bộ nhớ đệm, địa chỉ của nó sẽ là địa chỉ của member đầu tiên, và các member sẽ mang đỉa chỉ khác nhau như trong struct.
 	return 0;
 }
 ```
-
+# Bài 10 OOP
+- Có 4 đặc tính: Tính đa hình, tính kế thừa, tính trừu tượng, tính đóng gói.
+  
+  . 'Tính đa hình' : tính đa hình có thể tóm gọn lại là chúng ta có thể tạo nhiều hàm giống nhau (trùng tên) nhưng khác input paramter
+```c
+class ToanHoc{
+    public:
+        void tong(int a,int b);
+        void tong(int a, int b, int c);
+        int tong(double a, double b);
+}
+```
