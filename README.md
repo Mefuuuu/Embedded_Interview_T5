@@ -456,12 +456,22 @@ int main(){
 # Bài 10 OOP
 - Có 4 đặc tính: Tính đa hình, tính kế thừa, tính trừu tượng, tính đóng gói.
   
-  . 'Tính đa hình' : tính đa hình có thể tóm gọn lại là chúng ta có thể tạo nhiều hàm giống nhau (trùng tên) nhưng khác input paramter
+  . `Tính đa hình`: tính đa hình có thể tóm gọn lại là chúng ta có thể tạo nhiều hàm giống nhau (trùng tên) nhưng khác input paramter
 ```c
 class ToanHoc{
     public:
-        void tong(int a,int b);
+        void tong(int a, int b);
         void tong(int a, int b, int c);
         int tong(double a, double b);
 }
+```
+  . `Tính kế thừa`: Một class có thể kế thừa các thuộc tính của một class khác đã tồn tại trước đó. Chỉ có `Public` và `Protected` mới được kế thừa còn `Private` thì không được kế thừa, muốn kế thừa được các member trong `Private` buộc phải đổi lại `Protected`.
+
+  . `Tính trừu tượng`: Là một khả năng mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông tin cần xử lý. Là chỉ những thứ cần thiết mà người dùng cần sử dụng thì được nằm ở `public` còn tính toán phức tạp mà người dùng không quan tâm đến thì nằm ở `private`.
+```c
+public: 
+	void nhapABC(); -> Người dùng quan tâm và dễ sử dụng 
+	void getX1X2();
+private: 
+	int getdelTa(); -> Chương trình phức tạp người dùng không quan tâm 
 ```
