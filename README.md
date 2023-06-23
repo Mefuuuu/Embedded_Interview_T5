@@ -465,9 +465,9 @@ class ToanHoc{
         int tong(double a, double b);
 }
 ```
-  . `Tính kế thừa`: Một class có thể kế thừa các thuộc tính của một class khác đã tồn tại trước đó. Chỉ có `Public` và `Protected` mới được kế thừa còn `Private` thì không được kế thừa, muốn kế thừa được các member trong `Private` buộc phải đổi lại `Protected`.
+   . `Tính kế thừa`: Một class có thể kế thừa các thuộc tính của một class khác đã tồn tại trước đó. Chỉ có `Public` và `Protected` mới được kế thừa còn `Private` thì không được kế thừa, muốn kế thừa được các member trong `Private` buộc phải đổi lại `Protected`.
 
-  . `Tính trừu tượng`: Là một khả năng mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông tin cần xử lý. Là chỉ những thứ cần thiết mà người dùng cần sử dụng thì được nằm ở `public` còn tính toán phức tạp mà người dùng không quan tâm đến thì nằm ở `private`.
+   . `Tính trừu tượng`: Là một khả năng mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông tin cần xử lý. Là chỉ những thứ cần thiết mà người dùng cần sử dụng thì được nằm ở `public` còn tính toán phức tạp mà người dùng không quan tâm đến thì nằm ở `private`.
 ```c
 public: 
 	void nhapABC(); -> Người dùng quan tâm và dễ sử dụng 
