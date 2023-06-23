@@ -476,12 +476,8 @@ private:
 	int getdelTa(); -> Chương trình phức tạp người dùng không quan tâm 
 ```
 
-  . `Tính đóng gói`: trong lập trình hướng đối tượng có ý nghĩa không 
-cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng, 
-mà chỉ có phương thức nội tại của đối tượng có thể thay đổi chính nó.
-Điều đó có nghĩa, dữ liệu và thông tin sẽ được đóng gói lại, giúp các tác động bên 
-ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn 
-vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
+  . `Tính đóng gói`: trong lập trình hướng đối tượng có ý nghĩa không cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng, 
+mà chỉ có phương thức nội tại của đối tượng có thể thay đổi chính nó. Điều đó có nghĩa, dữ liệu và thông tin sẽ được đóng gói lại, giúp các tác động bên 
+ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
 
-Ví dụ đơn giản, khi bạn dùng một cái iphone, bạn không thể thay đổi các cấu trúc 
-bên trong của hệ điều hành iOS, mà chỉ có Apple mới có thể làm được điều này thôi
+Ví dụ đơn giản, khi bạn dùng một cái iphone, bạn không thể thay đổi các cấu trúc bên trong của hệ điều hành iOS, mà chỉ có Apple mới có thể làm được điều này thôi
