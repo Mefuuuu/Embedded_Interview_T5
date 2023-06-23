@@ -481,3 +481,34 @@ mà chỉ có phương thức nội tại của đối tượng có thể thay �
 ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
 
 Ví dụ đơn giản, khi bạn dùng một cái iphone, bạn không thể thay đổi các cấu trúc bên trong của hệ điều hành iOS, mà chỉ có Apple mới có thể làm được điều này thôi
+
+# Namespace
+`Namespace` là từ khóa trong C++ được sử dụng để định nghĩa một phạm vi nhằm mục đích phân biệt các hàm, lớp, biến, ... cùng tên trong các thư viện khác nhau.
+
+Khi tạo `namespace` nếu muốn dùng chung tên biến của các member thì khi khai báo tên của `namespace` thì phải khai báo tên khác nhau
+
+Nếu dùng chung tên của `namespace` thì tên của các member phải khác nhau (dù có chung file hay khác file), Do khai báo cùng tên `namespace` thì dùng chung bộ nhớ nên nếu tên các member cũng giống thì những member giống nhau sẽ cùng chung 1 địa thì sẽ dẫn đến xung đột vùng nhớ
+
+```c
+namespace conOngA{
+    int A = 10;
+}
+namspace conOngB{
+    int A = 20;
+}
+```
+# Template
+Template (khuôn mẫu) là một từ khóa trong C++, và là một kiểu dữ liệu trừu tượng tổng quát hóa cho các kiểu dữ liệu int, float, double, bool...
+
+Template trong C++ có 2 loại đó là function template & class template.
+
+Template giúp người lập trình định nghĩa tổng quát cho hàm và lớp thay vì phải nạp chồng (overloading) cho từng hàm hay phương thức với những kiểu dữ liệu khác nhau.
+```c
+ int tong(int a, int b);
+ double tong(double a, double b);
+ template<typename var> //thay vì ta code hai hàm riêng để xử lý, thì ta có thể code dùng template chung lại để gọn code hơn.
+ 	int tong(var a, var b){
+ 		return (var)(a+b);
+ 	}
+```
+#B12 VECTOR
