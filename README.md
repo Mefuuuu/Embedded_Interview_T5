@@ -433,5 +433,23 @@ int main(){
 
   . Khai báo trước trong form sau đó khởi tạo bên ngoài
 
- . Biến static trong class có chung một địa chỉ khởi tạo và tồn tại hết vòng đời chương trình.
+  . Biến static trong class có chung một địa chỉ khởi tạo và tồn tại hết vòng đời chương trình.
+
+```c
+class SinhVien{
+	public:
+		static int tuoi; // phải khởi tạo lần đầu ở ngoài
+};
+
+int SinhVien::tuoi; 
+
+int main(){
+	
+	SinhVien sv1,sv2;
+	sv1.tuoi = 10;
+	sv2.tuoi = 30;
+	printf("%d\n", sv1.tuoi);    // in ra = 30
+	return 0;
+}
+```
 
