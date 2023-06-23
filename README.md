@@ -511,4 +511,4 @@ Template giúp người lập trình định nghĩa tổng quát cho hàm và l�
  		return (var)(a+b);
  	}
 ```
-#B12 VECTOR
+# B12 VECTOR
