@@ -479,8 +479,21 @@ private:
   . `Tính đóng gói`: trong lập trình hướng đối tượng có ý nghĩa không cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng, 
 mà chỉ có phương thức nội tại của đối tượng có thể thay đổi chính nó. Điều đó có nghĩa, dữ liệu và thông tin sẽ được đóng gói lại, giúp các tác động bên 
 ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
-
-Ví dụ đơn giản, khi bạn dùng một cái iphone, bạn không thể thay đổi các cấu trúc bên trong của hệ điều hành iOS, mà chỉ có Apple mới có thể làm được điều này thôi
+```c
+class ToanHoac{
+    public:
+        void nhapABC();
+        void getX1X2(); 
+    private:
+        int A; // người dùng nhập
+        int B; // người dùng nhập
+        int C; // người dùng nhập
+        int X1; // lấy ra cho người dùng xem, người dùng không được can thiệp 
+        int X2; // lấy ra cho người dùng xem, người dùng không được can thiệp 
+        int delta; 
+        int getDelta();
+}
+```
 
 # Namespace
 `Namespace` là từ khóa trong C++ được sử dụng để định nghĩa một phạm vi nhằm mục đích phân biệt các hàm, lớp, biến, ... cùng tên trong các thư viện khác nhau.
