@@ -30,8 +30,10 @@ class SinhVien : public DoiTuong{
         void setThongTin(string ten, int tuoi, int mssv);
         void hienThi();
     private:
-        int MSSV;
+        static int MSSV;
 };
+
+int SinhVien::MSSV;
 
 void SinhVien::setThongTin(string ten, int tuoi, int mssv){
     TEN = ten;
@@ -57,6 +59,10 @@ int main(){
     
     sv.setThongTin("Phuoc",23, 63);
     sv.hienThi(); 
+
+    sv.setThongTin("hoa",23, 6453);
+    sv.hienThi(); 
+
 
     return 0;
 }
