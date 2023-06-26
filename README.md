@@ -361,7 +361,7 @@ int num = 10;
  printf("Giá trị của n: %d\n", **ptp); //Giá trị của n: 10
  printf("Địa chỉ của ptp: %p\n", ptp); //Địa chỉ của ptr: 0x7ffee2a697a0
  ```
-# Bài 9 Class
+# Bài 8 Class
 Class là một cấu trúc dữ liệu tự định nghĩa, nó cho phép lập trình viên tạo ra các đối tượng (objects) mới có cùng bản chất.
 
 Các biến được khai báo trong class được gọi là các property và các hàm được khai báo trong class được gọi là các method
@@ -453,7 +453,7 @@ int main(){
 	return 0;
 }
 ```
-# Bài 10 OOP
+# Bài 9 OOP
 - Có 4 đặc tính: Tính đa hình, tính kế thừa, tính trừu tượng, tính đóng gói.
   
   . `Tính đa hình`: tính đa hình có thể tóm gọn lại là chúng ta có thể tạo nhiều hàm giống nhau (trùng tên) nhưng khác input paramter
@@ -524,4 +524,29 @@ Template giúp người lập trình định nghĩa tổng quát cho hàm và l�
  		return (var)(a+b);
  	}
 ```
-# B12 VECTOR
+# BÀI 10 VECTOR
+- Vector là một cấu trúc dữ liệu trong C++ dùng để chứa các đối tượng khác. Tương tự như mảng (array), vector cũng có thể chứa nhiều phần tử.
+
+- Các phần tử trong vector được lưu trữ một cách liên tiếp trong bộ nhớ. Điều này cho phép truy cập dễ dàng đến các phần tử bằng cách sử dụng chỉ số (index).
+
+- Vector khác mảng thông thường là kích thước của vector có thể thay đổi trong quá trình thực thi chương trình. Khi cần, vector có thể mở rộng (tăng kích thước) hoặc thu hẹp (giảm kích thước) để chứa thêm hoặc loại bỏ các phần tử.
+
+- Sử dụng thư viện #include<vector>.
+- Khai báo vector :
+```c
+vector <int> array
+```
+- Các hàm thường dùng
+array.push_back(9); -> thêm một phần tử ở phía sau vector
+
+array.size() -> trả về kích thước vector
+
+array.pop_back() -> xóa phần tử phía sau cùng vector
+
+array.insert(array.begin() + 3, 7)  -> thêm phần tử vào vị trí thứ ba, hàm array.begin() trả về địa chỉ đầu tiên
+
+array.clear(); -> Hàm thu hồi bộ nhớ, vector hoạt động dựa trên cấp phát động nên khi dùng xong ta phải thu hồi vùng nhớ
+
+array.erase(array.begin()+2); -> xóa phần tử theo địa chỉ
+
+array.assign(8,5); -> tạo ra một vector có 8 phần tử và gán giá trị bằng 5.
