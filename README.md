@@ -525,6 +525,8 @@ Template giúp người lập trình định nghĩa tổng quát cho hàm và l�
  	}
 ```
 # BÀI 10 VECTOR
+**Vector**
+
 - Vector là một cấu trúc dữ liệu trong C++ dùng để chứa các đối tượng khác. Tương tự như mảng (array), vector cũng có thể chứa nhiều phần tử.
 
 - Các phần tử trong vector được lưu trữ một cách liên tiếp trong bộ nhớ. Điều này cho phép truy cập dễ dàng đến các phần tử bằng cách sử dụng chỉ số (index).
@@ -537,6 +539,7 @@ Template giúp người lập trình định nghĩa tổng quát cho hàm và l�
 vector <int> array
 ```
 - Các hàm thường dùng
+
 array.push_back(9); -> thêm một phần tử ở phía sau vector
 
 array.size() -> trả về kích thước vector
@@ -550,3 +553,21 @@ array.clear(); -> Hàm thu hồi bộ nhớ, vector hoạt động dựa trên c
 array.erase(array.begin()+2); -> xóa phần tử theo địa chỉ
 
 array.assign(8,5); -> tạo ra một vector có 8 phần tử và gán giá trị bằng 5.
+
+**For each**
+
+Có thể sử dụng hàm for sau đây thay cho cách duyệt mảng truyền thống
+```c
+for (int item : array){
+	printf(" i = %d\n",item);
+}
+```
+
+**Auto**
+
+Khi khai báo biến mà không xác định được kiểu dữ liệu thì dùng từ khóa auto sẽ tự kiểm tra dữ liệu được gán là kiểu dữ liệu nào thì nó tự động là kiểu dữ liệu đó, kể cả con trỏ .
+```c
+int a = 10; 
+auto data = &a; 
+```
+**List**
