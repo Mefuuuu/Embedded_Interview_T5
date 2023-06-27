@@ -525,7 +525,7 @@ Template giúp người lập trình định nghĩa tổng quát cho hàm và l�
  	}
 ```
 # BÀI 10 VECTOR
-**Vector**
+## Vector
 
 - Vector là một cấu trúc dữ liệu trong C++ dùng để chứa các đối tượng khác. Tương tự như mảng (array), vector cũng có thể chứa nhiều phần tử.
 
@@ -554,7 +554,7 @@ array.erase(array.begin()+2); -> xóa phần tử theo địa chỉ
 
 array.assign(8,5); -> tạo ra một vector có 8 phần tử và gán giá trị bằng 5.
 
-**For each**
+### For each
 
 Có thể sử dụng hàm for sau đây thay cho cách duyệt mảng truyền thống
 ```c
@@ -563,14 +563,14 @@ for (int item : array){
 }
 ```
 
-**Auto**
+### Auto
 
 Khi khai báo biến mà không xác định được kiểu dữ liệu thì dùng từ khóa auto sẽ tự kiểm tra dữ liệu được gán là kiểu dữ liệu nào thì nó tự động là kiểu dữ liệu đó, kể cả con trỏ .
 ```c
 int a = 10; 
 auto data = &a; 
 ```
-**List**
+## List
 - List là một cấu trúc dữ liệu danh sách liên kết kép (doubly linked list).
 
 - Các phần tử cửa nó không được lưu trong các địa liên tiếp mà lưu ở địa chỉ bất kì, và mỗi phần tử trước sẽ lưu kèm địa chỉ của phần tử kế tiếp theo tuần tự. Riêng phần tử cuối cùng sẽ lưu địa chỉ là null
@@ -606,3 +606,4 @@ int main(int argc, char const *argv[])
 Với mảng thông thường cho phép tốc độ xử lý nhanh, do các địa chỉ liền kề nhau, tuy nhiên nếu phải thêm một phần tử bất kỳ nào đó khiến mảng phải dời ra sau nhiều lần, xử lý chậm hơn do phải thực hiện nhiều lần.
 
 Còn với Linked list thêm 1 giá trị vào rất dễ dàng, tuy nhiên nếu duyệt thì cũng phải tốn nhiều bước hơn, đọc giá trị rồi đọc địa chỉ của giá trị kế tiếp, chậm hơn so với duyệt liên tiếp các địa chỉ liền kề
+## Map
