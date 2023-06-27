@@ -571,3 +571,38 @@ int a = 10;
 auto data = &a; 
 ```
 **List**
+- List là một cấu trúc dữ liệu danh sách liên kết kép (doubly linked list).
+
+- Các phần tử cửa nó không được lưu trong các địa liên tiếp mà lưu ở địa chỉ bất kì, và mỗi phần tử trước sẽ lưu kèm địa chỉ của phần tử kế tiếp theo tuần tự. Riêng phần tử cuối cùng sẽ lưu địa chỉ là null
+  
+- Vì cung cấp một danh sách các phần tử được liên kết với nhau bằng các con trỏ, cho phép thêm, xóa và truy cập các phần tử một cách linh hoạt.
+
+- Dùng thư viện #include<list>.
+```c
+#include<list>
+
+typedef struct 
+{
+    int value;
+    node *next;
+}node;
+
+int main(int argc, char const *argv[])
+{
+    list<int> array;	// khai báo mảng kiểu int
+    array.push_back(4);  //thêm phần tử thứ 0 là 4
+    array.push_back(8);  //thêm phần tử thứ 1 là 8
+    array.push_back(20);
+    array.push_back(15); //thêm phần tử thứ 4 là 15
+ 
+    for(auto item : array){ 
+ 	    printf("i = %d\n",item);
+    }   
+    return 0;
+}
+```
+`So sánh` giữa list và mảng thường:
+
+Với mảng thông thường cho phép tốc độ xử lý nhanh, do các địa chỉ liền kề nhau, tuy nhiên nếu phải thêm một phần tử bất kỳ nào đó khiến mảng phải dời ra sau nhiều lần, xử lý chậm hơn do phải thực hiện nhiều lần.
+
+Còn với Linked list thêm 1 giá trị vào rất dễ dàng, tuy nhiên nếu duyệt thì cũng phải tốn nhiều bước hơn, đọc giá trị rồi đọc địa chỉ của giá trị kế tiếp, chậm hơn so với duyệt liên tiếp các địa chỉ liền kề
