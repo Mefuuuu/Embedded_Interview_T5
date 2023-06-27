@@ -495,7 +495,7 @@ class ToanHoac{
 }
 ```
 
-# Namespace
+## Namespace
 `Namespace` là từ khóa trong C++ được sử dụng để định nghĩa một phạm vi nhằm mục đích phân biệt các hàm, lớp, biến, ... cùng tên trong các thư viện khác nhau.
 
 Khi tạo `namespace` nếu muốn dùng chung tên biến của các member thì khi khai báo tên của `namespace` thì phải khai báo tên khác nhau
@@ -510,7 +510,7 @@ namspace conOngB{
     int A = 20;
 }
 ```
-# Template
+## Template
 Template (khuôn mẫu) là một từ khóa trong C++, và là một kiểu dữ liệu trừu tượng tổng quát hóa cho các kiểu dữ liệu int, float, double, bool...
 
 Template trong C++ có 2 loại đó là function template & class template.
