@@ -628,5 +628,5 @@ map <string, int> Sinhvien;
  }
 ```
 ## Ưu điểm và nhược điểm của Vector, List và Map:
-![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/dda9dd3e-dae9-4384-947e-6d29f16714c8)
+![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/1df847e7-fe8e-43ef-846f-b0b9bbc40f5e)
 # B12 Hàm ảo Virtual function 
