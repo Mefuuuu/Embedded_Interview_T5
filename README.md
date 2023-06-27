@@ -629,7 +629,7 @@ map <string, int> Sinhvien;
 ```
 ## Ưu điểm và nhược điểm của Vector, List và Map:
 ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/1df847e7-fe8e-43ef-846f-b0b9bbc40f5e)
-# B12 Hàm ảo Virtual function 
+# Bài 12 Hàm ảo Virtual function 
 Khi 2 hàm giống nhau được gọi trực tiếp từ hàm main mà không có từ khóa virtual để phân biệt thì luôn được gọi từ class cha, khi thêm từ khóa virtual vào thì chương trình sẽ biết mà load lại địa chỉ từ class con.
 
 Từ khóa virtual cũng như thông báo cho PC xem class con có ghi đè hàm hay không.
