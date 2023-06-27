@@ -607,3 +607,24 @@ Với mảng thông thường cho phép tốc độ xử lý nhanh, do các đ�
 
 Còn với Linked list thêm 1 giá trị vào rất dễ dàng, tuy nhiên nếu duyệt thì cũng phải tốn nhiều bước hơn, đọc giá trị rồi đọc địa chỉ của giá trị kế tiếp, chậm hơn so với duyệt liên tiếp các địa chỉ liền kề
 ## Map
+- Là một cấu trúc dữ liệu ánh xạ trong thư viện chuẩn của ngôn ngữ. Nó được sử dụng để lưu trữ các cặp key-value, trong đó mỗi key là duy nhất và liên kết với một giá trị (value) tương ứng.
+
+- Key và value có thể là nhiều kiểu dữ liệu khác nhau như string, int, double , ...
+
+- Dùng thư viện #include<map>.
+```c
+#include <map>
+int main(){
+map <string, int> Sinhvien; 
+
+    Sinhvien["ID"] = 101;
+    Sinhvien["Lop"] = 7; 
+    Sinhvien["Tuoi"] = 13; 
+
+    for (auto item : Sinhvien){
+        printf("Key: %s, value: %d \n",item.first.c_str(), item.second);
+    }
+    return 0;
+ }
+```
+# B12 Hàm ảo Virtual function 
