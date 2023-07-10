@@ -1,3 +1,7 @@
-Chưa sử dụng marco để làm gọn.
+1.Chưa sử dụng marco để làm gọn.
 
-Chưa thêm command
+2. Chưa thêm command
+
+3. Chưa làm makeFile
+
+Sẽ hoàn thiện
