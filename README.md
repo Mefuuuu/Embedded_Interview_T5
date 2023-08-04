@@ -808,8 +808,24 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
 
   . Master và slave đều có 1 thanh ghi dữ liệu 8 bit chứa dữ liệu cần gửi đi hoặc dữ liệu nhận về.
   
-  . Đối với có nhiều slave, master muốn giao tiếp với slave sẽ thông qua chân SS, để giao tiếp với slave nào thì master sẽ kéo chân SS nối với slave đó xuống thấp, 
-    các chân SS nối với các slave khác sẽ ở mức cao.
+  . Đối với có nhiều slave, master muốn giao tiếp với slave sẽ thông qua chân SS, để giao tiếp với slave nào thì master sẽ kéo chân SS nối với slave đó xuống mức 
+    thấp, các chân SS nối với các slave khác sẽ ở mức cao.
+  
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/ff6b6a08-265e-4202-9b22-b02008cb49a6)
   
   . Cứ mỗi xung nhịp Clock, một bit trong thanh ghi dữ liệu của Master sẽ được truyền qua Slave thông qua chân MOSI, và 1 bit trong thanh ghi dữ liệu trong Slave sẽ 
-  được truyền qua Master thông qua chân MISO.
+    được truyền qua Master thông qua chân MISO.
+
+- Các chế độ hoạt đông: Có 4 chế độ hoạt động sẽ tùy thuộc vào CPOL và CPAL
+  
+  ![Screenshot 2023-08-04 165022](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/40980859-7986-46df-9b4c-21640f3d3a0c)
+
+  . CPOL:nói về hình dạng xung * CPOL = 0: đầu tiên hình dạng xung ở mức 0 sau đó lên mức 1 và kéo lại xuống 0. * SPOL = 1: khi không truyền data sẽ ở mức 1 sau đó 
+    kéo xuống 0 và kéo lại lên 1.
+  
+  . CPAL: nói về cách truyền data * CPAL = 0: đưa bit vào chân truyền trước sau đó cần xung clock để đẩy bit data đi * CPAL = 1: đưa xung clock trước sau đó mới đưa 
+    bit data vào và cần 1 xung clock tiếp theo để đẩy bit data đi.
+
+## Giao thức I2C:
+
+
