@@ -629,6 +629,7 @@ map <string, int> Sinhvien;
 ```
 ## Ưu điểm và nhược điểm của Vector, List và Map:
 ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/1df847e7-fe8e-43ef-846f-b0b9bbc40f5e)
+
 # Bài 12 Hàm ảo Virtual function 
 Khi 2 hàm giống nhau được gọi trực tiếp từ hàm main mà không có từ khóa virtual để phân biệt thì luôn được gọi từ class cha, khi thêm từ khóa virtual vào thì chương trình sẽ biết mà load lại địa chỉ từ class con.
 
@@ -778,4 +779,15 @@ int main(int argc, char const *argv[])
 
 Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ stack khi hủy thì sẽ hoạt động theo kiểu LIFO , Last In First Out, cái nào được khởi tạo cuối cùng thì sẽ được hủy trước, cách hoạt động của stack.
 
-# B13 EMBEDDED
+# Bài 13 EMBEDDED
+## Giao thức SPI:
+
+- Là 1 chuẩn giao tiếp nối tiếp tốc độ cao.
+  
+  . Các bit dữ liệu được truyền nối tiếp và có xung clock đồng bộ.
+  
+  . Giao tiếp song công, có thể truyền và nhận tại cùng một thời điểm.
+  
+  . Khoảng cách truyền ngắn, tốc độ truyền khoảng vài Mb/s.
+  
+  . Có thể chỉ gồm 1 master và 1 slave, hoặc 1 master và nhiều slave.
