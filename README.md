@@ -791,3 +791,25 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
   . Khoảng cách truyền ngắn, tốc độ truyền khoảng vài Mb/s.
   
   . Có thể chỉ gồm 1 master và 1 slave, hoặc 1 master và nhiều slave.
+
+- SPI gồm có 4 đường tín hiệu:
+  
+  . SCK: xung clock
+  
+  . MOSI: Master Out, Slave In
+  
+  . MISO: Master In, Slave Out
+  
+  . SS: Slave select
+
+- Cách truyền và nhận tín hiệu
+  
+  ![spi](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/b32da950-9081-42e4-8db7-e5bb2a3c5e0e)
+
+  . Master và slave đều có 1 thanh ghi dữ liệu 8 bit chứa dữ liệu cần gửi đi hoặc dữ liệu nhận về.
+  
+  . Đối với có nhiều slave, master muốn giao tiếp với slave sẽ thông qua chân SS, để giao tiếp với slave nào thì master sẽ kéo chân SS nối với slave đó xuống thấp, 
+    các chân SS nối với các slave khác sẽ ở mức cao.
+  
+  . Cứ mỗi xung nhịp Clock, một bit trong thanh ghi dữ liệu của Master sẽ được truyền qua Slave thông qua chân MOSI, và 1 bit trong thanh ghi dữ liệu trong Slave sẽ 
+  được truyền qua Master thông qua chân MISO.
