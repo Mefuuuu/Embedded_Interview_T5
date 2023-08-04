@@ -638,7 +638,7 @@ Từ khóa virtual cũng như thông báo cho PC xem class con có ghi đè hàm
 
 Khi class con có hàm trùng tên và được gọi từ main thì sẽ load lại địa chỉ từ class con (overloading)
 
-##Tham chiếu và tham trị
+## Tham chiếu và tham trị
 
 Sự khác biệt giữ tham chiếu và tham trị rõ ràng nhất là trong các bài tập về list, vì các thành phần trong list chỉ có thể được thay đổi dựa trên địa chỉ nên khi muốn thay đổi thì phải truyền vào 1 địa chỉ.
 
@@ -670,13 +670,13 @@ int main(int argc, char const *argv[])
 ```
 Trong ví dụ trên thì in ra chỉ có y và z là thay đổi giá trị còn x thì không; cách thứ ba là truyền vào hàm 1 con trỏ, bản chất con trỏ là lưu địa chỉ của biến nên có thể thay đổi giá trị mà địa chỉ đó trỏ đến.
 
-##Lambda funtion
+## Lambda funtion
 
 Lambda function cho phép định nghĩa và sử dụng 1 hàm ngay trong hàm chính, không cần phải khai báo toàn cục và trỏ tới 1 hàm khác như con trỏ hàm
 
 Cú pháp: capture clause -> return-type { definition of method; };
 
-EX:
+`VD`:
 ```c
 int a = 10; 
 auto test = [a](int b){
@@ -689,11 +689,11 @@ auto tong = [](int a, int b){
     return a +b; 
 };
 ```
-`Advantage`:
+`Lợi ích`:
 - Con trỏ PC không phải trỏ nhiều, liển mạch chương trình -> chạy nhanh hơn
 - Không tốn nhiều bộ nhớ (không phải tốn các địa chỉ để lưu hàm như hàm local, global).
 
-Mở rộng:
+`Mở rộng`:
 
 ```c
 int d;
@@ -706,4 +706,76 @@ auto tong [=]{
 ```
 Thêm dấu bằng vào thì nó tự hiểu được các biến được dùng trong hàm là các biến được khai báo bên trên, không cần phải liệt kê.
 
-##Iterator
+## Iterator
+
+Khi làm việc với list,vector,... chúng được gọi là container, khi duyệt thì ta dùng iterator.
+
+```c
+list<int>::interator it; 
+for (it = array.begin(); it!= array.end(); ++it){
+    cout << *it << endl; 
+    if (*it == 6){
+        array.erase(it); 
+    }
+}
+```
+
+Iterator sẽ lưu địa chỉ các node.
+
+## Destructor
+
+Hàm hủy
+
+```c
+
+#include <iostream>
+
+using namespace std; 
+
+class SinhVien
+{
+private:
+    int ID;
+    int *ptr; 
+public:
+    SinhVien(/* args */);
+    ~SinhVien();
+    int getID(){
+        return this->ID; 
+    }
+};
+
+SinhVien::SinhVien(/* args */)
+{
+    static int id = 100; 
+    ID = id; 
+    ptr = &id;
+    id++; 
+}
+
+SinhVien::~SinhVien()
+{
+    *ptr = 100; 
+}
+
+void test1(){
+    SinhVien sv1,sv2; 
+    cout << sv1.getID() << endl; 
+    cout << sv2.getID() << endl; 
+}
+void test2(){
+    SinhVien sv1,sv2; 
+    cout << sv1.getID() << endl; 
+    cout << sv2.getID() << endl; 
+}
+int main(int argc, char const *argv[])
+{
+    test1();
+    test2(); 
+    return 0;
+}
+```
+
+Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ stack khi hủy thì sẽ hoạt động theo kiểu LIFO , Last In First Out, cái nào được khởi tạo cuối cùng thì sẽ được hủy trước, cách hoạt động của stack.
+
+# B13 EMBEDDED
