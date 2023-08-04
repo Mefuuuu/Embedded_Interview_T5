@@ -901,8 +901,8 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
   
 - Bảng vector ngắt chứa các ngắt mà ta muốn sử dụng ( bao gồm reset, ngắt ngoài, ngắt truyền thông, ngắt timer)
 
-  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/4f45521f-d12c-449c-84b7-3245b3b05b0f)
-  
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/03370ca3-8937-42c2-923c-3c96340b7897)
+
 - Mỗi ngắt sẽ có 1 địa chỉ khác nhau và stt ngắt càng thấp thì độ ưu tiên càng cao. Khi có ngắt xảy ra, PC sẽ chạy tới địa chỉ ngắt đó và thực hiện.
   
 - Ngắt ngoài:
