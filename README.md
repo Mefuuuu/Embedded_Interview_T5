@@ -834,9 +834,6 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
 
 - I2C là một giao thức truyền thông nối tiếp vì vậy dữ liệu sẽ được truyền từng bit dọc theo một đường duy nhất ( đường SDA).
 
-
-
-
 - Khi Master không giao tiếp với Slave thì 2 chân SDA và SCL sẽ ở mức cao
 
 - Cách hoạt động của I2C: dữ liệu sẽ được truyền trong các tin nhắn. Tin nhắn sẽ được chia thành các khung dữ liệu. Mỗi tin nhắn sẽ bao gồm điều kiện khởi động, khung địa chỉ ( address frame), read/write bit, ACK/NACK bit, data frame, điều kiện dừng.
