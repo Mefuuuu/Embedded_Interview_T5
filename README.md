@@ -838,6 +838,10 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
 
 - Cách hoạt động của I2C: dữ liệu sẽ được truyền trong các tin nhắn. Tin nhắn sẽ được chia thành các khung dữ liệu. Mỗi tin nhắn sẽ bao gồm điều kiện khởi động, khung địa chỉ ( address frame), read/write bit, ACK/NACK bit, data frame, điều kiện dừng.
 
+![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/d1c76110-8126-46a2-b62d-ef76a1577aa7)
+
+![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/b4eda1dc-b232-4d62-a7ac-eefbfc21e69a)
+
   . Start condition: SDA sẽ chuyển từ mức cao xuống mức thấp sau đó SCL sẽ chuyển tử mức cao xuống thấp
   
   . Address frame: gồm 7 hoặc 10 bit để xác định slave khi master muốn giao tiếp với slave đó
@@ -852,3 +856,63 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
   
   . Stop condition: sau khi đã gửi hết các data, master sẽ gửi một stop bit để dừng quá trình truyền. SCL sẽ chuyển từ mức 0 lên mức 1 sau đó SDA sẽ chuyển tử mức 0 
     lên 1.
+
+## Giao thức UART:
+
+![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/10293572-79e0-4034-8acc-b3820f3f346e)
+
+- Gồm 2 chân: Tx và Rx, khi không truyền thì cả 2 chân đều kéo lên mức 1
+
+- Chân Tx của 1 chip sẽ kết nối trức tiếp với chân Rx của chip kia và ngược lại. UART là giao thức một master và một slave.
+  
+- Khi gửi trên chân Tx, UART đầu tiên sẽ dịch thông tin song song này thành nối tiếp và truyền đến thiết bị nhận, UART thứ hai nhận dữ liệu này trên chân Rx của nó và biến 
+  đổi nó trở lại thành song song để giao tiếp với thiết bị điều khiển của nó.
+
+- Có 3 chế độ truyền UART:
+  . Full duplex: Giao tiếp đồng thời đến và đi từ mỗi master và slave
+  
+  . Half duplex: Dữ liệu đi theo một hướng tại một thời điểm
+  
+  . Simplex: Chỉ giao tiếp một chiều
+  
+- Dữ liệu truyền qua UART được tổ chức thành các gói. Mỗi gói chứa 1 bit bắt đầu, 5 đến 9 bit dữ liệu (tùy thuộc vào UART), một bit chẵn lẻ tùy chọn và 1 hoặc 2 bit dừng.
+  
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/02cfd8f1-6f31-4d63-ab66-adedaf1573c4)
+
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/d7ce307b-6ba0-4e3a-96ae-4e674313913d)
+
+  . Start bit: UART thường ở mức cao khi không truyền tín hiệu. Để truyền tín hiệu, UART truyền sẽ kéo Tx từ cao xuống thấp trong 1 chu kì clock, khi UART nhận thấy được thay 
+    đổi đó nó sẽ bắt đầu đọc các bit trong khung dữ liệu
+  
+  . Khung dữ liệu: gồm 5 đến 8 bit nếu có bit chẵn lẻ, hoặc có thể lên đến 9 bit data khi không có bit chẵn lẻ.
+  
+  . Bit chẵn lẻ: để nhận biết có sự thay đổi dữ liệu trong quá trình truyền hay không. Sau khi nhận được khung data, nó sẽ đếm xem thử số bit 1 là bao nhiêu và kiểm tra xem 
+    nó là chẵn hay lẻ. Đối với quy tắc số chẵn, nếu tổng bit 1 trong khung data là số chẵn thì bit chẳn/lẻ = 0, và ngược lại. Đối với quy tắc lẻ, nếu tổng bit 1 trong khung 
+    data là số chẵn thì bit chẳn/lẻ = 1, và ngược lại
+  
+  . Stop bit: để báo hiệu kết thúc gói dữ liệu. Đối với 1 bit stop, Tx sẽ kéo từ 0 lên 1. Đối với 2 bit stop, Tx sẽ kéo từ 0 lên 1, kéo lại xuống mức 0 sau đó delay, rồi kéo 
+    lại lên mức 1.
+
+## Ngắt (Interrupt):
+
+- Ngắt là một sự kiện khẩn cấp, buộc vi điều khiển phải tạm dừng chương trình hiện tại, và phục vụ ngay lập tức nhiệm vụ mà ngắt yêu cầu.
+  
+- Cần phải có trình phục vụ ngắt (ISR) để đưa ra nhiệm vụ cho vđk khi có ngắt xảy ra.
+  
+- Bảng vector ngắt chứa các ngắt mà ta muốn sử dụng ( bao gồm reset, ngắt ngoài, ngắt truyền thông, ngắt timer)
+
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/4f45521f-d12c-449c-84b7-3245b3b05b0f)
+  
+- Mỗi ngắt sẽ có 1 địa chỉ khác nhau và stt ngắt càng thấp thì độ ưu tiên càng cao. Khi có ngắt xảy ra, PC sẽ chạy tới địa chỉ ngắt đó và thực hiện.
+  
+- Ngắt ngoài:
+
+  . LOW: kích hoạt trạng thái chân input mức thấp
+  
+  . HIGH: kích hoạt trạng thái chân input mức cao
+  
+  . RISING: chân input chuyển từ mức thấp lên cao ( xung cạnh lên)
+  
+  . FALLING: chân input chuyển từ mức cao lên thấp ( xung cạnh xuống)
+
+- Ngắt truyền thông: thường dùng cho UART, SPI
