@@ -637,7 +637,9 @@ Từ khóa virtual cũng như thông báo cho PC xem class con có ghi đè hàm
 2 hàm trùng tên tồn tại ở cả class con và class cha thì được gọi là ghi đè (overide)
 
 Khi class con có hàm trùng tên và được gọi từ main thì sẽ load lại địa chỉ từ class con (overloading)
+
 ##Tham chiếu và tham trị
+
 Sự khác biệt giữ tham chiếu và tham trị rõ ràng nhất là trong các bài tập về list, vì các thành phần trong list chỉ có thể được thay đổi dựa trên địa chỉ nên khi muốn thay đổi thì phải truyền vào 1 địa chỉ.
 
 Tham trị chẳng qua là hàm sẽ tạo ra một bản sao khác so với biến được truyền vào, thực chất là 2 biến khác nhau và mang 2 địa chỉ riêng biệt, thay đổi giá trị của biến này thì không ảnh hướng đến biến kia và ngược lại.
@@ -669,6 +671,7 @@ int main(int argc, char const *argv[])
 Trong ví dụ trên thì in ra chỉ có y và z là thay đổi giá trị còn x thì không; cách thứ ba là truyền vào hàm 1 con trỏ, bản chất con trỏ là lưu địa chỉ của biến nên có thể thay đổi giá trị mà địa chỉ đó trỏ đến.
 
 ##Lambda funtion
+
 Lambda function cho phép định nghĩa và sử dụng 1 hàm ngay trong hàm chính, không cần phải khai báo toàn cục và trỏ tới 1 hàm khác như con trỏ hàm
 
 Cú pháp: capture clause -> return-type { definition of method; };
