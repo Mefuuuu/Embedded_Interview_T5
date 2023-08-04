@@ -828,4 +828,30 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
 
 ## Giao thức I2C:
 
+- Chỉ sử dụng 2 dây: SDA (truyền và nhận data) và SCL (xung Clock)
 
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/dde8e159-b43c-4070-b67d-9e80cf2badbd)
+
+- I2C là một giao thức truyền thông nối tiếp vì vậy dữ liệu sẽ được truyền từng bit dọc theo một đường duy nhất ( đường SDA).
+
+
+
+
+- Khi Master không giao tiếp với Slave thì 2 chân SDA và SCL sẽ ở mức cao
+
+- Cách hoạt động của I2C: dữ liệu sẽ được truyền trong các tin nhắn. Tin nhắn sẽ được chia thành các khung dữ liệu. Mỗi tin nhắn sẽ bao gồm điều kiện khởi động, khung địa chỉ ( address frame), read/write bit, ACK/NACK bit, data frame, điều kiện dừng.
+
+  . Start condition: SDA sẽ chuyển từ mức cao xuống mức thấp sau đó SCL sẽ chuyển tử mức cao xuống thấp
+  
+  . Address frame: gồm 7 hoặc 10 bit để xác định slave khi master muốn giao tiếp với slave đó
+  
+  . Read/Write bit: giúp xác định Master sẽ truyền dữ liệu ( tức là write khi bit này = 0) hay nhận dữ liệu ( tức là read khi bit này = 1)
+  
+  . ACK/NACK bit: khi master truyền 1 byte đến slave, lúc này dây SDA sẽ đổi trạng thái đầu vào ra (MASTER sẽ là đầu vào, SLAVE sẽ là đầu ra) sau đó salve sẽ truyền 
+    bit 0 đến master để xác nhận rằng slave đã nhận đủ 1 byte, hoặc truyền bit 1 để thông báo không nhận đủ 1 byte.
+  
+  . Data frame: sau khi nhận được bít ACK từ slave, data sẽ sẵn sàng được gửi đi. khung dữ liệu sẽ có độ dài 8 bit, các bit sẽ được truyền dọc theo dây SDA, và mỗi 
+    khung dữ liệu như vậy sẽ có đi kèm theo bít ACK/NACK để xác nhận rằng có gửi thành công hay không
+  
+  . Stop condition: sau khi đã gửi hết các data, master sẽ gửi một stop bit để dừng quá trình truyền. SCL sẽ chuyển từ mức 0 lên mức 1 sau đó SDA sẽ chuyển tử mức 0 
+    lên 1.
