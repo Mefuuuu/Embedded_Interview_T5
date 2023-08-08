@@ -68,7 +68,9 @@ Tài nguyên trên vi điều khiển là không nhiều cho nên cần tối ư
   . Được sử dụng để cấp phát bộ nhớ động như: `Malloc`, `Calloc`, ...
   
   . Sẽ được giải phóng khi gọi hàm free, ...
-  
+
+`So sánh Stack và Heap?`
+
 ------***HINT***------
   
 Để cấp phát bộ nhớ động ta có, 
