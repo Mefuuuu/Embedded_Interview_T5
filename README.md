@@ -363,7 +363,7 @@ int phepCong(int a, int b) {
  	return 0;
  }
  ```
-- Thông qua con trỏ hàm, có thể dùm hàm để làm input parameter của hàm khác
+- Thông qua con trỏ hàm, có thể dùng hàm để làm input parameter của hàm khác
 
 ```c  
   int cong(int a, int b) {
