@@ -363,19 +363,10 @@ int phepCong(int a, int b) {
  	return 0;
  }
  ```
- ***3. Con trỏ void:*** Con trỏ void có thể trỏ tới bất kỳ kiểu dữ liệu nào, nhưng khi xuất ra giá trị thì phải ép kiểu.
- ```c
-int num = 10;
- float f = 3.14;
- void *ptr;
- ptr = &num;
- printf("num = %d\n",(int*)ptr);
- ptr = &f;
- printf("f = %f\n",(float*)ptr);
- ```
-***4. Con trỏ hàm:*** Lưu trữ địa chỉ của một hàm cụ thể để gọi hàm thông qua con trỏ.
-```c
- int cong(int a, int b) {
+- Thông qua con trỏ hàm, có thể dùm hàm để làm input parameter của hàm khác
+
+```c  
+  int cong(int a, int b) {
  	return a + b;
  }
  int tru(int a, int b) {
@@ -395,7 +386,20 @@ int num = 10;
 
  	return 0;
  }
+```  
+
+ ***3. Con trỏ void:*** Con trỏ void có thể trỏ tới bất kỳ kiểu dữ liệu nào, nhưng khi xuất ra giá trị thì phải ép kiểu.
+ ```c
+int num = 10;
+ float f = 3.14;
+ void *ptr;
+ ptr = &num;
+ printf("num = %d\n",(int*)ptr);
+ ptr = &f;
+ printf("f = %f\n",(float*)ptr);
  ```
+
+
  ***5. Pointer to pointer:*** Con trỏ này dùng để lưu địa chỉ của con trỏ khác
  
 `int* ptr = 10;` bản chất của nó cũng là biến nên cũng sẽ có địa chỉ và giá trị
