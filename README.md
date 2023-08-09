@@ -400,7 +400,7 @@ int num = 10;
  ```
 
 
- ***5. Pointer to pointer:*** Con trỏ này dùng để lưu địa chỉ của con trỏ khác
+ ***4. Pointer to pointer:*** Con trỏ này dùng để lưu địa chỉ của con trỏ khác
  
 `int* ptr = 10;` bản chất của nó cũng là biến nên cũng sẽ có địa chỉ và giá trị
 
