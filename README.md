@@ -627,7 +627,7 @@ auto data = &a;
 ## List
 - List là một cấu trúc dữ liệu danh sách liên kết kép (doubly linked list).
 
-- Các phần tử cửa nó không được lưu trong các địa liên tiếp mà lưu ở địa chỉ bất kì, và mỗi phần tử trước sẽ lưu kèm địa chỉ của phần tử kế tiếp theo tuần tự. Riêng phần tử cuối cùng sẽ lưu địa chỉ là null
+- Các phần tử của nó không được lưu trong các địa chỉ liên tiếp mà lưu ở địa chỉ bất kì, và mỗi phần tử trước sẽ lưu kèm địa chỉ của phần tử kế tiếp theo tuần tự. Riêng phần tử cuối cùng sẽ lưu địa chỉ là null
   
 - Vì cung cấp một danh sách các phần tử được liên kết với nhau bằng các con trỏ, cho phép thêm, xóa và truy cập các phần tử một cách linh hoạt.
 
