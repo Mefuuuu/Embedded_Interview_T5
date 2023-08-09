@@ -980,3 +980,5 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
   . Nếu ngắt 2 có mức độ ưu tiên cao hơn thì lúc này nó sẽ chạy xong địa chỉ nó dã chạy và lưu địa chỉ tiếp theo (địa chỉ 2)vào StackPoint. Sau đó con trỏ PC trỏ để phân vùng của ngắt 2 và chạy chương trình của ngắt 2, sau khi chạy hết chương trình ngắt 2 thì nó sẽ vào StackPoint để lấy địa chỉ gần nhất được lưu vào trong StackPoint (là địa chỉ 2) để chạy tiếp chương trình, lúc này con trọ PC đang ở phân vùng ngắt 1 sau khi chạy xong chương trình ngắt 1 thì nó sẽ vào StackPoint để lấy (địa chỉ 1) và chạy cho đến hết chương trình.
 
   . Nếu ngắt 2 có mức độ ưu tiên thấp hơn thì lúc này nó sẽ chạy xong chương trình của ngắt 1, sau đó nó quay lại kiểm tra xem ngắt 2 còn không. Nếu còn thì nó sẽ chạy ngắt 2, sau khi chạy xong chương trình ngắt 2 thì nó sẽ vào StackPoint để nó lấy địa chỉ 1 để nó chạy cho hết chương trình.
+
+## CAN
