@@ -942,17 +942,25 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
 ## Ngắt (Interrupt):
 
 - Ngắt là một sự kiện khẩn cấp, buộc vi điều khiển phải tạm dừng chương trình hiện tại, và phục vụ ngay lập tức nhiệm vụ mà ngắt yêu cầu.
+
+- Ngắt có độ ưu tiên cao hơn chương trình chính
   
 - Cần phải có trình phục vụ ngắt (ISR) để đưa ra nhiệm vụ cho vđk khi có ngắt xảy ra.
   
 - Bảng vector ngắt chứa các ngắt mà ta muốn sử dụng ( bao gồm reset, ngắt ngoài, ngắt truyền thông, ngắt timer)
 
+- Có rất nhiều loại ngắt, muốn sử dụng ngắt nào thì đăng ký vào bảng vector ngắt thì các ngắt đó mới được hoạt động
+
   ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/03370ca3-8937-42c2-923c-3c96340b7897)
 
 - Mỗi ngắt sẽ có 1 địa chỉ khác nhau và stt ngắt càng thấp thì độ ưu tiên càng cao. Khi có ngắt xảy ra, PC sẽ chạy tới địa chỉ ngắt đó và thực hiện.
   
-- Ngắt ngoài:
+***- Ngắt ngoài:***
 
+- Vi điều khiển sẽ có một số chân hỗ trợ ngắt, ngắt ngoài là một tín hiệu được tạo ra từ bên ngoài vi điều khiển (thường là một ngõ vào hoặc cảm biến) và được sử dụng để tạm dừng thực thi chương trình hiện tại, để thực hiện một hàm xử lý ngắt.
+  
+- 4 loại trạng thái ngắt
+  
   . LOW: kích hoạt trạng thái chân input mức thấp
   
   . HIGH: kích hoạt trạng thái chân input mức cao
@@ -961,4 +969,14 @@ Khi khởi tạo 1 object thì vùng nhớ mà nó khởi tạo là vùng nhớ 
   
   . FALLING: chân input chuyển từ mức cao lên thấp ( xung cạnh xuống)
 
-- Ngắt truyền thông: thường dùng cho UART, SPI
+- Ngắt truyền thông: là một cơ chế trong vi điều khiển cho phép nhanh chóng xử lý dữ liệu mới nhận được từ các giao tiếp truyền thông. Khi có dữ liệu mới, vi điều khiển tự động dừng công việc hiện tại và xử lý dữ liệu đó mà không cần chờ đợi. Thường dùng cho UART, SPI
+  
+- Hoạt động của ngắt khi có nhiều ngắt lồng vào:
+
+  ![image](https://github.com/Mefuuuu/Embedded_Interview_T5/assets/133778142/cea57024-5fcd-4374-8300-28f4e98f3f2c)
+  
+  . Đầu tiên chương trình chạy, khi gặp ngắt 1 thì nó sẽ chạy xong địa chỉ hiện tại và lưu địa chỉ tiếp theo (địa chỉ 1) vào StackPoint. Sau đó con trỏ PC sẽ trỏ đến phần vùng của ngắt 1 và chạy chương trình ngắt 1, nếu trong quá trình chạy gặp phải ngắt 2 thì nó sẽ so sánh mức độ ưu tiên.
+
+  . Nếu ngắt 2 có mức độ ưu tiên cao hơn thì lúc này nó sẽ chạy xong địa chỉ nó dã chạy và lưu địa chỉ tiếp theo (địa chỉ 2)vào StackPoint. Sau đó con trỏ PC trỏ để phân vùng của ngắt 2 và chạy chương trình của ngắt 2, sau khi chạy hết chương trình ngắt 2 thì nó sẽ vào StackPoint để lấy địa chỉ gần nhất được lưu vào trong StackPoint (là địa chỉ 2) để chạy tiếp chương trình, lúc này con trọ PC đang ở phân vùng ngắt 1 sau khi chạy xong chương trình ngắt 1 thì nó sẽ vào StackPoint để lấy (địa chỉ 1) và chạy cho đến hết chương trình.
+
+  . Nếu ngắt 2 có mức độ ưu tiên thấp hơn thì lúc này nó sẽ chạy xong chương trình của ngắt 1, sau đó nó quay lại kiểm tra xem ngắt 2 còn không. Nếu còn thì nó sẽ chạy ngắt 2, sau khi chạy xong chương trình ngắt 2 thì nó sẽ vào StackPoint để nó lấy địa chỉ 1 để nó chạy cho hết chương trình.
